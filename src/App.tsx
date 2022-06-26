@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import TestComponent from "./components/TestComponent";
 
 import {
 	setupIonicReact,
@@ -97,6 +98,7 @@ const App: React.FC = () => {
 					<IonRow>
 						<IonCol id="result"></IonCol>
 					</IonRow>
+					<TestComponent />
 				</IonGrid>
 			</IonContent>
 		</IonApp>

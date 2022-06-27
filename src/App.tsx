@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import TestComponent from "./components/TestComponent";
 
 import {
 	setupIonicReact,

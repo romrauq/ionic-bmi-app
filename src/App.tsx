@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import TestComponent from "./components/TestComponent";
 
 import {
@@ -16,6 +16,8 @@ import {
 	IonCol,
 	IonButton,
 	IonIcon,
+	IonCard,
+	IonCardContent,
 } from "@ionic/react";
 
 import { calculatorOutline, refreshOutline } from "ionicons/icons";
@@ -42,6 +44,8 @@ import "./theme/variables.css";
 setupIonicReact();
 
 const App: React.FC = () => {
+	const [calculatedBMI, setCalculatedBMI] = useState<number>();
+
 	const heightInputRef = useRef<HTMLIonInputElement>(null);
 	const weightInputRef = useRef<HTMLIonInputElement>(null);
 
@@ -54,11 +58,12 @@ const App: React.FC = () => {
 		}
 
 		const bmi = +entered_weight / (+entered_height * +entered_height);
-		console.log(bmi);
+		setCalculatedBMI(bmi);
 	};
 	const resetInputs = () => {
 		weightInputRef.current!.value = "";
 		heightInputRef.current!.value = "";
+		setCalculatedBMI(undefined);
 	};
 
 	return (
@@ -95,10 +100,17 @@ const App: React.FC = () => {
 							</IonButton>
 						</IonCol>
 					</IonRow>
-					<IonRow>
-						<IonCol id="result"></IonCol>
-					</IonRow>
-					<TestComponent />
+					{calculatedBMI && (
+						<IonRow>
+							<IonCol>
+								<IonCard>
+									<IonCardContent>
+										<h2>{calculatedBMI}</h2>
+									</IonCardContent>
+								</IonCard>
+							</IonCol>
+						</IonRow>
+					)}
 				</IonGrid>
 			</IonContent>
 		</IonApp>

@@ -46,7 +46,7 @@ const App: React.FC = () => {
 		const entered_weight = weightInputRef.current!.value;
 		const entered_height = heightInputRef.current!.value;
 
-		if (!entered_height || !entered_weight) {
+		if (!entered_height || !entered_weight || +entered_height <= 0 || +entered_weight <= 0) {
 			return;
 		}
 

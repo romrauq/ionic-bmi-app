@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import BmiControls from "./components/BmiControls";
+import BmiResult from "./components/BmiResult";
 
 import {
 	setupIonicReact,
@@ -12,10 +13,6 @@ import {
 	IonLabel,
 	IonInput,
 	IonGrid,
-	IonRow,
-	IonCol,
-	IonCard,
-	IonCardContent,
 } from "@ionic/react";
 
 /* Core CSS required for Ionic components to work properly */
@@ -83,17 +80,7 @@ const App: React.FC = () => {
 
 				<IonGrid className="ion-text-center ion-margin">
 					<BmiControls onCalculate={calculateBMI} onReset={resetInputs} />
-					{calculatedBMI && (
-						<IonRow>
-							<IonCol>
-								<IonCard>
-									<IonCardContent>
-										<h2>{calculatedBMI}</h2>
-									</IonCardContent>
-								</IonCard>
-							</IonCol>
-						</IonRow>
-					)}
+					{calculatedBMI && <BmiResult result={calculatedBMI} />}
 				</IonGrid>
 			</IonContent>
 		</IonApp>

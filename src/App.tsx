@@ -70,12 +70,12 @@ const App: React.FC = () => {
 			<IonContent className="ion-padding">
 				<IonItem>
 					<IonLabel position="floating">Your Height</IonLabel>
-					<IonInput ref={heightInputRef}></IonInput>
+					<IonInput type="number" ref={heightInputRef}></IonInput>
 				</IonItem>
 
 				<IonItem>
 					<IonLabel position="floating">Your Weight</IonLabel>
-					<IonInput ref={weightInputRef}></IonInput>
+					<IonInput type="number" ref={weightInputRef}></IonInput>
 				</IonItem>
 
 				<IonGrid className="ion-text-center ion-margin">

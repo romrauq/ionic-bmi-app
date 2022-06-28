@@ -1,13 +1,11 @@
 import React, { useRef, useState } from "react";
+import AppHeader from "./components/AppHeader";
 import BmiControls from "./components/BmiControls";
 import BmiResult from "./components/BmiResult";
 
 import {
 	setupIonicReact,
 	IonApp,
-	IonHeader,
-	IonToolbar,
-	IonTitle,
 	IonContent,
 	IonItem,
 	IonLabel,
@@ -79,12 +77,7 @@ const App: React.FC = () => {
 				]}
 			/>
 			<IonApp>
-				<IonHeader>
-					<IonToolbar color="primary">
-						<IonTitle> BMI Calculator </IonTitle>
-					</IonToolbar>
-				</IonHeader>
-
+				<AppHeader />
 				<IonContent className="ion-padding">
 					<IonItem>
 						<IonLabel position="floating">Your Height</IonLabel>

@@ -60,9 +60,9 @@ const App: React.FC = () => {
 		setCalculatedBMI(undefined);
 	};
 
-	const clearError = () => {
-		setError("");
-	};
+	// const clearError = () => {
+	// 	setError("");
+	// };
 
 	return (
 		<React.Fragment>
